@@ -1,0 +1,1256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="#FAFAFA"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="40dp"
+        >
+
+        <!--name label-->
+        <TextView
+            android:id="@+id/HelloUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello, Recyculator!"
+            android:textSize="25sp"
+            android:fontFamily="sans-serif-condensed-medium"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <!--    pfp-->
+        <ImageView
+            android:id="@+id/pfpbg"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/pfpbg"
+            android:scaleType="fitStart"
+            android:adjustViewBounds="true"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:cornerRadius="50dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    scroll view-->
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="190dp"
+        android:layout_marginTop="25dp"
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="190dp"
+            android:orientation="horizontal"
+            >
+
+            <!--        GHG INFO-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="400dp"
+                android:layout_height="match_parent"
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:layout_marginHorizontal="45dp"
+                    android:src="@drawable/normalbgrc"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/ghgbg"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Greenhouse Gases"
+                    android:id="@+id/ghgLabel"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintLeft_toLeftOf="@+id/ghgbg"
+                    app:layout_constraintTop_toTopOf="@+id/ghgbg"
+                    android:textSize="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Previous:"
+                    android:id="@+id/monthLabel"
+                    android:textColor="@color/grey"
+                    app:layout_constraintLeft_toLeftOf="@+id/ghgbg"
+                    app:layout_constraintTop_toBottomOf="@+id/ghgLabel"
+                    android:textSize="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    />
+
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="25dp"
+                    android:text="0.00 kgCO₂e"
+                    android:id="@+id/monthValue"
+                    android:textColor="@color/black"
+                    app:layout_constraintLeft_toLeftOf="@+id/ghgbg"
+                    app:layout_constraintTop_toBottomOf="@+id/monthLabel"
+                    android:textSize="20dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginLeft="20dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Goal:"
+                    android:id="@+id/totalLabel"
+                    android:textColor="@color/grey"
+                    app:layout_constraintLeft_toLeftOf="@+id/ghgbg"
+                    app:layout_constraintTop_toBottomOf="@+id/monthValue"
+                    android:textSize="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="20dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100.0 kgCO₂e"
+                    android:id="@+id/totalValue"
+                    android:textColor="@color/black"
+                    app:layout_constraintLeft_toLeftOf="@+id/ghgbg"
+                    app:layout_constraintTop_toBottomOf="@+id/totalLabel"
+                    android:textSize="20dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginLeft="20dp"
+                    />
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/ghgimg"
+                    app:layout_constraintTop_toTopOf="@id/ghgbg"
+                    app:layout_constraintRight_toRightOf="@id/ghgbg"
+                    app:layout_constraintBottom_toBottomOf="@id/ghgbg"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--        TREE INFO-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="400dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="90dp"
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:layout_marginHorizontal="45dp"
+                    android:src="@drawable/normalbgrc"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/treebg"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Power Saved"
+                    android:id="@+id/TreeLabel"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintLeft_toLeftOf="@+id/treebg"
+                    app:layout_constraintTop_toTopOf="@+id/treebg"
+                    android:textSize="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Previous:"
+                    android:id="@+id/monthLabel1"
+                    android:textColor="@color/grey"
+                    app:layout_constraintLeft_toLeftOf="@+id/treebg"
+                    app:layout_constraintTop_toBottomOf="@+id/TreeLabel"
+                    android:textSize="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    />
+
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="25dp"
+                    android:text="0.000 kWh"
+                    android:id="@+id/monthValue1"
+                    android:textColor="@color/black"
+                    app:layout_constraintLeft_toLeftOf="@+id/treebg"
+                    app:layout_constraintTop_toBottomOf="@+id/monthLabel1"
+                    android:textSize="20dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginLeft="20dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Goal:"
+                    android:id="@+id/totalLabel1"
+                    android:textColor="@color/grey"
+                    app:layout_constraintLeft_toLeftOf="@+id/treebg"
+                    app:layout_constraintTop_toBottomOf="@+id/monthValue1"
+                    android:textSize="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="20dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="120.0 kWh"
+                    android:id="@+id/totalValue1"
+                    android:textColor="@color/black"
+                    app:layout_constraintLeft_toLeftOf="@+id/treebg"
+                    app:layout_constraintTop_toBottomOf="@+id/totalLabel1"
+                    android:textSize="20dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginLeft="20dp"
+                    />
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="160dp"
+                    android:src="@drawable/treeimg"
+                    app:layout_constraintTop_toTopOf="@id/treebg"
+                    app:layout_constraintRight_toRightOf="@id/treebg"
+                    app:layout_constraintBottom_toBottomOf="@id/treebg"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--        FUEL INFO-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="400dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="90dp"
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:layout_marginHorizontal="45dp"
+                    android:src="@drawable/normalbgrc"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/fuelbg"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fuel Saved: "
+                    android:id="@+id/FuelLabel"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintLeft_toLeftOf="@+id/fuelbg"
+                    app:layout_constraintTop_toTopOf="@+id/fuelbg"
+                    android:textSize="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Previous:"
+                    android:id="@+id/monthLabel2"
+                    android:textColor="@color/grey"
+                    app:layout_constraintLeft_toLeftOf="@+id/fuelbg"
+                    app:layout_constraintTop_toBottomOf="@+id/FuelLabel"
+                    android:textSize="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    />
+
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="25dp"
+                    android:text="0.00 ℓ"
+                    android:id="@+id/monthValue2"
+                    android:textColor="@color/black"
+                    app:layout_constraintLeft_toLeftOf="@+id/fuelbg"
+                    app:layout_constraintTop_toBottomOf="@+id/monthLabel2"
+                    android:textSize="20dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginLeft="20dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Goal:"
+                    android:id="@+id/totalLabel2"
+                    android:textColor="@color/grey"
+                    app:layout_constraintLeft_toLeftOf="@+id/fuelbg"
+                    app:layout_constraintTop_toBottomOf="@+id/monthValue2"
+                    android:textSize="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="20dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="125.0 ℓ"
+                    android:id="@+id/totalValue2"
+                    android:textColor="@color/black"
+                    app:layout_constraintLeft_toLeftOf="@+id/fuelbg"
+                    app:layout_constraintTop_toBottomOf="@+id/totalLabel2"
+                    android:textSize="20dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginLeft="20dp"
+                    />
+
+                <ImageView
+                    android:layout_width="130dp"
+                    android:layout_height="160dp"
+                    android:src="@drawable/fuelimg"
+                    app:layout_constraintTop_toTopOf="@id/fuelbg"
+                    app:layout_constraintRight_toRightOf="@id/fuelbg"
+                    app:layout_constraintBottom_toBottomOf="@id/fuelbg"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/TextQuickAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quick Actions"
+        android:textSize="30sp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_gravity="left"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="5dp"
+        />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/TextQuickAction"
+        android:layout_marginTop="10dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/constrLay"
+            >
+
+            <!--        plastic recycle selector-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/plasticGroup"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:layout_constraintTop_toTopOf="@id/constrLay"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                >
+
+                <Button
+                    android:id="@+id/plasticButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginHorizontal="30dp"
+                    android:background="@color/trans"
+                    />
+
+                <ImageView
+                    android:id="@+id/plasticBG"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/normalbgrc"
+                    />
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/plasticrecyclelogo"
+                    app:layout_constraintLeft_toLeftOf="@id/plasticBG"
+                    app:layout_constraintRight_toRightOf="@id/plasticBG"
+                    app:layout_constraintTop_toTopOf="@+id/plasticBG"
+                    app:layout_constraintBottom_toBottomOf="@+id/plasticBG"
+                    />
+
+                <TextView
+                    android:id="@+id/plasticLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Plastic"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/plasticBG"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/monthLabelPlastic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1.5 kgCO₂e"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintLeft_toRightOf="@id/plasticBG"
+                    app:layout_constraintTop_toBottomOf="@id/plasticLabel"
+                    />
+
+                <TextView
+                    android:id="@+id/totalLabelPlastic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1.5ℓ fuel / kg"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintLeft_toRightOf="@id/plasticBG"
+                    app:layout_constraintTop_toBottomOf="@id/monthLabelPlastic"
+                    />
+
+                <ImageView
+                    android:id="@+id/arrowPlastic"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginRight="40dp"
+                    android:src="@drawable/arrow"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--        paper recycle selector-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/paperGroup"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:layout_constraintTop_toBottomOf="@id/plasticGroup"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="8dp"
+                >
+
+                <Button
+                    android:id="@+id/paperButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginHorizontal="30dp"
+                    android:background="@color/trans"
+                    />
+
+                <ImageView
+                    android:id="@+id/paperBG"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/normalbgrc"
+                    />
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/paperrecyclelogo"
+                    app:layout_constraintLeft_toLeftOf="@id/paperBG"
+                    app:layout_constraintRight_toRightOf="@id/paperBG"
+                    app:layout_constraintTop_toTopOf="@+id/paperBG"
+                    app:layout_constraintBottom_toBottomOf="@+id/paperBG"
+                    />
+
+                <TextView
+                    android:id="@+id/paperLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paper"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/paperBG"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/monthLabelPaper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.7 kgCO₂e"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintLeft_toRightOf="@id/paperBG"
+                    app:layout_constraintTop_toBottomOf="@id/paperLabel"
+                    />
+
+                <TextView
+                    android:id="@+id/totalLabelPaper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1.2ℓ fuel / kg"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintLeft_toRightOf="@id/paperBG"
+                    app:layout_constraintTop_toBottomOf="@id/monthLabelPaper"
+                    />
+
+                <ImageView
+                    android:id="@+id/arrowPaper"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginRight="40dp"
+                    android:src="@drawable/arrow"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--        metal recycle selector-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/metalGroup"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:layout_constraintTop_toBottomOf="@id/paperGroup"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="8dp"
+                >
+
+                <Button
+                    android:id="@+id/metalButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginHorizontal="30dp"
+                    android:background="@color/trans"
+                    />
+
+                <ImageView
+                    android:id="@+id/metalBG"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/normalbgrc"
+                    />
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/metalrecyclelogo"
+                    app:layout_constraintLeft_toLeftOf="@id/metalBG"
+                    app:layout_constraintRight_toRightOf="@id/metalBG"
+                    app:layout_constraintTop_toTopOf="@+id/metalBG"
+                    app:layout_constraintBottom_toBottomOf="@+id/metalBG"
+                    />
+
+                <TextView
+                    android:id="@+id/metalLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Metal"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/metalBG"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/monthLabelMetal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3.5 kgCO₂e"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintLeft_toRightOf="@id/metalBG"
+                    app:layout_constraintTop_toBottomOf="@id/metalLabel"
+                    />
+
+                <TextView
+                    android:id="@+id/totalLabelMetal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8.0ℓ fuel / kg"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintLeft_toRightOf="@id/metalBG"
+                    app:layout_constraintTop_toBottomOf="@id/monthLabelMetal"
+                    />
+
+                <ImageView
+                    android:id="@+id/arrowMetal"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginRight="40dp"
+                    android:src="@drawable/arrow"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--        electronics recycle selector-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/electronicsGroup"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:layout_constraintTop_toBottomOf="@id/metalGroup"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="8dp"
+                >
+
+                <Button
+                    android:id="@+id/electronicsButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginHorizontal="30dp"
+                    android:background="@color/trans"
+                    />
+
+                <ImageView
+                    android:id="@+id/electronicsBG"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/normalbgrc"
+                    />
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/electronicsrecyclelogo"
+                    app:layout_constraintLeft_toLeftOf="@id/electronicsBG"
+                    app:layout_constraintRight_toRightOf="@id/electronicsBG"
+                    app:layout_constraintTop_toTopOf="@+id/electronicsBG"
+                    app:layout_constraintBottom_toBottomOf="@+id/electronicsBG"
+                    />
+
+                <TextView
+                    android:id="@+id/electronicsLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Electronics"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/electronicsBG"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/monthLabelElectronics"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="50 kgCO₂e"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintLeft_toRightOf="@id/electronicsBG"
+                    app:layout_constraintTop_toBottomOf="@id/electronicsLabel"
+                    />
+
+                <TextView
+                    android:id="@+id/totalLabelElectronics"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2.8ℓ fuel / kg"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintLeft_toRightOf="@id/electronicsBG"
+                    app:layout_constraintTop_toBottomOf="@id/monthLabelElectronics"
+                    />
+
+                <ImageView
+                    android:id="@+id/arrowElectronics"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginRight="40dp"
+                    android:src="@drawable/arrow"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--        catridge cartridge recycle selector-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/catridgeGroup"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:layout_constraintTop_toBottomOf="@id/electronicsGroup"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="8dp"
+                >
+
+                <Button
+                    android:id="@+id/catridgeButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginHorizontal="30dp"
+                    android:background="@color/trans"
+                    />
+
+                <ImageView
+                    android:id="@+id/catridgeBG"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/normalbgrc"
+                    />
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/catridgerecyclelogo"
+                    app:layout_constraintLeft_toLeftOf="@id/catridgeBG"
+                    app:layout_constraintRight_toRightOf="@id/catridgeBG"
+                    app:layout_constraintTop_toTopOf="@+id/catridgeBG"
+                    app:layout_constraintBottom_toBottomOf="@+id/catridgeBG"
+                    />
+
+                <TextView
+                    android:id="@+id/catridgeLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ink Catridges: "
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/catridgeBG"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/monthLabelCatridge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.8 kgCO₂e"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintLeft_toRightOf="@id/catridgeBG"
+                    app:layout_constraintTop_toBottomOf="@id/catridgeLabel"
+                    />
+
+                <TextView
+                    android:id="@+id/totalLabelCatridge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.0ℓ fuel / kg"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintLeft_toRightOf="@id/catridgeBG"
+                    app:layout_constraintTop_toBottomOf="@id/monthLabelCatridge"
+                    />
+
+                <ImageView
+                    android:id="@+id/arrowCatridge"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginRight="40dp"
+                    android:src="@drawable/arrow"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--        oil recycle selector-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/oilGroup"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:layout_constraintTop_toBottomOf="@id/catridgeGroup"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="8dp"
+                >
+
+                <Button
+                    android:id="@+id/oilButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginHorizontal="30dp"
+                    android:background="@color/trans"
+                    />
+
+                <ImageView
+                    android:id="@+id/oilBG"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/normalbgrc"
+                    />
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/oilrecyclelogo"
+                    app:layout_constraintLeft_toLeftOf="@id/oilBG"
+                    app:layout_constraintRight_toRightOf="@id/oilBG"
+                    app:layout_constraintTop_toTopOf="@+id/oilBG"
+                    app:layout_constraintBottom_toBottomOf="@+id/oilBG"
+                    />
+
+                <TextView
+                    android:id="@+id/oilLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cooking Oil: "
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/oilBG"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/monthLabelOil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3.5 kgCO₂e"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintLeft_toRightOf="@id/oilBG"
+                    app:layout_constraintTop_toBottomOf="@id/oilLabel"
+                    />
+
+                <TextView
+                    android:id="@+id/totalLabelOil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2.0ℓ fuel / kg"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintLeft_toRightOf="@id/oilBG"
+                    app:layout_constraintTop_toBottomOf="@id/monthLabelOil"
+                    />
+
+                <ImageView
+                    android:id="@+id/oilCatridge"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginRight="40dp"
+                    android:src="@drawable/arrow"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--        bag recycle selector-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bagGroup"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:layout_constraintTop_toBottomOf="@id/oilGroup"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="8dp"
+                >
+
+                <Button
+                    android:id="@+id/bagButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginHorizontal="30dp"
+                    android:background="@color/trans"
+                    />
+
+                <ImageView
+                    android:id="@+id/bagBG"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/normalbgrc"
+                    />
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/bagrecyclelogo"
+                    app:layout_constraintLeft_toLeftOf="@id/bagBG"
+                    app:layout_constraintRight_toRightOf="@id/bagBG"
+                    app:layout_constraintTop_toTopOf="@+id/bagBG"
+                    app:layout_constraintBottom_toBottomOf="@+id/bagBG"
+                    />
+
+                <TextView
+                    android:id="@+id/bagLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Plastic Bag:  "
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/bagBG"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/monthLabelBag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1.5 kgCO₂e"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintLeft_toRightOf="@id/bagBG"
+                    app:layout_constraintTop_toBottomOf="@id/bagLabel"
+                    />
+
+                <TextView
+                    android:id="@+id/totalLabelBag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1.5ℓ fuel / kg"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintLeft_toRightOf="@id/bagBG"
+                    app:layout_constraintTop_toBottomOf="@id/monthLabelBag"
+                    />
+
+                <ImageView
+                    android:id="@+id/bagCatridge"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginRight="40dp"
+                    android:src="@drawable/arrow"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--        cloth recycle selector-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clothGroup"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:layout_constraintTop_toBottomOf="@id/bagGroup"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="8dp"
+                >
+
+                <Button
+                    android:id="@+id/clothButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginHorizontal="30dp"
+                    android:background="@color/trans"
+                    />
+
+                <ImageView
+                    android:id="@+id/clothBG"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/normalbgrc"
+                    />
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/clothrecyclelogo"
+                    app:layout_constraintLeft_toLeftOf="@id/clothBG"
+                    app:layout_constraintRight_toRightOf="@id/clothBG"
+                    app:layout_constraintTop_toTopOf="@+id/clothBG"
+                    app:layout_constraintBottom_toBottomOf="@+id/clothBG"
+                    />
+
+                <TextView
+                    android:id="@+id/clothLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cloth: "
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/clothBG"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/monthLabelCloth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3.6 kgCO₂e"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintLeft_toRightOf="@id/clothBG"
+                    app:layout_constraintTop_toBottomOf="@id/clothLabel"
+                    />
+
+                <TextView
+                    android:id="@+id/totalLabelCloth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.0ℓ fuel / kg"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintLeft_toRightOf="@id/clothBG"
+                    app:layout_constraintTop_toBottomOf="@id/monthLabelCloth"
+                    />
+
+                <ImageView
+                    android:id="@+id/clothCatridge"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginRight="40dp"
+                    android:src="@drawable/arrow"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--        tyre recycle selector-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/tyreGroup"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:layout_constraintTop_toBottomOf="@id/clothGroup"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="40dp"
+                >
+
+                <Button
+                    android:id="@+id/tyreButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginHorizontal="30dp"
+                    android:background="@color/trans"
+                    />
+
+                <ImageView
+                    android:id="@+id/tyreBG"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/normalbgrc"
+                    />
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/tyrerecyclelogo"
+                    app:layout_constraintLeft_toLeftOf="@id/tyreBG"
+                    app:layout_constraintRight_toRightOf="@id/tyreBG"
+                    app:layout_constraintTop_toTopOf="@+id/tyreBG"
+                    app:layout_constraintBottom_toBottomOf="@+id/tyreBG"
+                    />
+
+                <TextView
+                    android:id="@+id/tyreLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tires: "
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/tyreBG"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/monthLabelTyre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1.5 kgCO₂e"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintLeft_toRightOf="@id/tyreBG"
+                    app:layout_constraintTop_toBottomOf="@id/tyreLabel"
+                    />
+
+                <TextView
+                    android:id="@+id/totalLabelTyre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1.2ℓ fuel / kg"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintLeft_toRightOf="@id/tyreBG"
+                    app:layout_constraintTop_toBottomOf="@id/monthLabelTyre"
+                    />
+
+                <ImageView
+                    android:id="@+id/tyreCatridge"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginRight="40dp"
+                    android:src="@drawable/arrow"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
