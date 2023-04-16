@@ -7,6 +7,7 @@ https://appetize.io/app/xr3ofetvkyyl2hayvc735hnjrq?device=pixel4&osVersion=11.0&
 
 
 Sources for our app:
+
 [1] "Aluminium Recycling in Europe." European Aluminium, www.european-aluminium.eu/policy-areas/sustainability/recycling/.
 
 [2] "Environmental Benefits of Recycling." Paper Recycling, www.paperrecycles.org/benefits-of-recycling/environmental-benefits.
